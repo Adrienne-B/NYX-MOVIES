@@ -1,0 +1,448 @@
+body {
+    background: #141414;
+    color: #ffff;
+}
+
+.row {
+    overflow-x: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.col {
+    display: flex;
+    justify-content: center;
+}
+
+.image-container {
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.image-container:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+.overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    bottom: 0;
+    font-size: 20px;
+    padding: 20px;
+    opacity: 0;
+    text-align: center;
+    transform: 0.5s ease;
+    width: 100%;
+}
+
+
+/* Menu Bar CSS*/
+
+.menu-container {
+    padding: 10px;
+}
+
+ul {
+    list-style: none;
+    display: inline-block;
+}
+
+ul li {
+    display: inline-block;
+    color: #7b8585;
+    cursor: pointer;
+    /* background-color: orange; */
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+/* ul li:hover {
+    background-color: #beecea; //Decided to out hover light blue box and replace it with blue in line 113
+*/
+p {
+    font-size: 12px;
+    padding-top: 15px;
+  
+}
+
+.active {
+    font-weight: bold;
+}
+
+.about-container {
+    padding: 10px;
+}
+
+/* Change the menu bar to hamburger on small screens*/
+.overlay-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: black;
+    height: 100%;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+    visibility: hidden;
+    width: 100%;
+    z-index: -1;
+}
+
+#main-menu ul {
+    /* max-width: 800px;
+    width: 100%;
+    height: 100%; */
+    /* margin: 0px auto; */
+    padding: 0px;
+    display: flex;
+    /* justify-content: space-evenly; */
+    align-items: center;
+    z-index: 9;
+}
+
+#main-menu a {
+    color: orange;
+    text-decoration: none;
+}
+
+#main-menu a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+#hamburger-input {
+    display: none;
+}
+
+
+/* Hamburger menu CSS*/
+#hamburger-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    display: none;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Cabin', Sans-serif;
+    cursor: pointer;
+    background: linear-gradient(
+        to bottom,
+        black,
+        black 20%,
+        orange 20%,
+        orange 40%,
+        black 40%,
+        black 60%,
+        orange 60%,
+        orange 80%,
+        black 80%,
+        black 100%
+    );
+}
+
+#hamburger-menu #sidebar-menu {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 200px;
+    height: 100%;
+    background-color: #3d0e61;
+    transition: 0.3s;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+#hamburger-menu h3 {
+    color: #b9faf8;
+    font-size: 2.2rem;
+}
+
+#hamburger-menu ul {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0px;
+}
+
+#hamburger-menu li {
+    background-color: #3d0e61;
+    list-style-type: none;
+    line-height: 3rem;
+}
+
+#hamburger-menu a {
+    color: #b9faf8;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+#hamburger-menu a:hover {
+    color: orange;
+    text-decoration: underline;
+    /* color: whitesmoke; */
+}
+
+#hamburger-input:checked + #hamburger-menu #sidebar-menu {
+    visibility: visible;
+    left: 0;
+}
+#hamburger-input:checked ~ .overlay {
+    visibility: hidden;
+    opacity: 0.4;
+}
+
+
+/*Media for mobile device size*/
+@media screen and (max-width: 750px) {
+    #main-menu {
+        display: none;
+    }
+    #hamburger-menu {
+        display: inline;
+    }
+    .row {
+        justify-content: flex-end !important;
+    }
+    #hamburger-input:checked {
+        background-color: #eee;
+    }
+
+    .menu-container-top {
+        justify-content: center !important;
+    }
+
+    .blur-row {
+        justify-content: flex-end !important;
+        margin-left: 50%;
+        transition: all 0.5s ease-out;
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: blur(5px);
+        overflow: hidden;
+        transform: scale(1);
+    }
+    .about-container {
+        margin-top: 100px;
+    }
+
+    #search-box {
+        margin-left: 50%;
+    }
+}
+.Collapsible {
+    padding: 5px;
+
+}
+
+.Collapsible__trigger {
+    display: flex;
+    justify-content: center;
+    /* background-color: grey; */
+    align-items: center;
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    height: 30px;
+}
+
+.Collapsible__contentOuter {
+    background-color: whitesmoke;
+    color: black;
+    margin-bottom: 1.5em;
+}
+
+.Collapsible__trigger.is-open svg {
+    transform: rotate(180deg);
+}
+
+.menu-heading {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 50px;
+}
+
+.menu-container-top {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+}
+
+.login-container {
+    padding: 10px;
+}
+/* Login CSS*/
+/* Full-width input fields */
+input[type='text'],
+input[type='password'] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button.login {
+    background-color: #04aa6d;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button.sign-up {
+    background-color: orange;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+/*This is when you hover over the movie card it kind of zooms*/
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0);
+    }
+    to {
+        -webkit-transform: scale(1);
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+}
+
+.error-message {
+    font-size: bold;
+    color: red;
+}
+
+.sign-up-title {
+    display: flex;
+    justify-content: center;
+}
+
+.company {
+    display: flex;
+    align-items: center;
+}

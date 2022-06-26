@@ -68,4 +68,39 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # NYX-MOVIES
+Final Project for TTS
+
+## Summary
+This app was created using all the necessary programs and/or 
+functions that was learn within 16 weeks under TTS program. In this final project 
+I created a movie app, which is super easy/user-friendly for any age to engage on.
+Simply sign in to register, once logged in, an Avatar will appear, type in your a movie, and
+you can also put your favorite movies in the favorite section. The best part is it is a responsive type
+of app which will display really well on all types of devices.
+
+
+### Software used:
+ Visual Studio Code/React
+
+### What I learn:
+I learned how to make a functioning app
+
+#### Challenges to improve on:
+1. What components to use
+2. Remembering to import
+
+
+#### Random Unexpected Challenges:
+1. Movies stayed verticle when it was suppose to be across/side by side
+
+#### Solutions/solving the issue:
+ Bootstrap in package.json helped with making it responsive
+
+
+#### Weakness so far:
+1.	Components and states
+
+
